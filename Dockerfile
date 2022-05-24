@@ -74,28 +74,47 @@ RUN conda install -y python=3 && \
 
 # jupyterhub ... 
 RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyterhub jupyterlab notebook nbgitpuller && \
+    conda update --all && \
     conda clean --all --yes
+    
 RUN conda install -c conda-forge -c pytorch -c krinsman matplotlib && \
+    conda update --all && \
     conda clean --all --yes
-# RUN conda install -c conda-forge -c pytorch -c krinsman tensorflow && \
-#    conda clean --all --yes
+    
 RUN conda install -c conda-forge -c pytorch -c krinsman pytorch torchvision torchaudio torchtext && \
+    conda update --all && \
     conda clean --all --yes
+    
 RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx xeus-cling && \
+    conda update --all && \
     conda clean --all --yes
+    
 RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx ipywidgets && \
+    conda update --all && \
     conda clean --all --yes
+    
 RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx bash_kernel && \
+    conda update --all && \
     conda clean --all --yes
+    
 RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx nodejs go && \
+    conda update --all && \
     conda clean --all --yes
+    
 RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx elyra jupyter_console jupyterlab-git prompt-toolkit && \
+    conda update --all && \
     conda clean --all --yes
+    
 RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx -c beakerx beakerx_kernel_groovy beakerx_kernel_kotlin beakerx_kernel_clojure beakerx_kernel_scala && \
+    conda update --all && \
     conda clean --all --yes
+    
 RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx lua ruby && \
+    conda update --all && \
     conda clean --all --yes
+    
 RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx voila ipyvuetify bqplot voila-vuetify && \
+    conda update --all && \
     conda clean --all --yes
                                                         
 # jupyter extension
