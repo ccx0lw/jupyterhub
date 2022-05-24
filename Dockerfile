@@ -126,13 +126,21 @@ RUN apk add --no-cache nodejs
 RUN node -v
                                                         
 # jupyter extension
-RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
-    jupyter serverextension enable --py jupyterlab && \
-    jupyter nbextension enable --py --sys-prefix ipyvuetify && \
-    jupyter nbextension enable --py --sys-prefix bqplot && \
-    # jupyterlab-logout
-    jupyter labextension install jupyterlab-plotly jupyterlab-drawio jupyterlab-topbar-extension jupyterlab-theme-toggle @jupyterlab/toc @jupyter-widgets/jupyterlab-manager @elyra/pipeline-editor-extension jupyter-vuetify bqplot && \
-    jupyter labextension update --all
+RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix 
+RUN jupyter serverextension enable --py jupyterlab 
+RUN jupyter nbextension enable --py --sys-prefix ipyvuetify 
+RUN jupyter nbextension enable --py --sys-prefix bqplot 
+# labextension     -- jupyterlab-logout
+RUN jupyter labextension install jupyterlab-plotly 
+RUN jupyter labextension install jupyterlab-drawio 
+RUN jupyter labextension install jupyterlab-topbar-extension 
+RUN jupyter labextension install jupyterlab-theme-toggle 
+RUN jupyter labextension install @jupyterlab/toc 
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager 
+RUN jupyter labextension install @elyra/pipeline-editor-extension 
+RUN jupyter labextension install jupyter-vuetify 
+RUN jupyter labextension install bqplot 
+RUN jupyter labextension update --all
     
 RUN pip install markdown
     
