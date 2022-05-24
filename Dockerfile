@@ -97,7 +97,7 @@ RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx bash_kernel &
     conda update --all && \
     conda clean --all --yes
     
-RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx nodejs go && \
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx go && \
     conda update --all && \
     conda clean --all --yes
     
@@ -116,6 +116,10 @@ RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx lua ruby && \
 RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx voila ipyvuetify bqplot voila-vuetify && \
     conda update --all && \
     conda clean --all --yes
+    
+# nodejs 18
+RUN curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+RUN apk add --no-cache nodejs
                                                         
 # jupyter extension
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
