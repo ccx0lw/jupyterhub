@@ -135,7 +135,7 @@ RUN jupyter labextension install jupyterlab-plotly
 RUN jupyter labextension install jupyterlab-drawio 
 RUN jupyter labextension install jupyterlab-topbar-extension 
 RUN jupyter labextension install jupyterlab-theme-toggle 
-RUN jupyter labextension install @jupyterlab/toc 
+# RUN jupyter labextension install @jupyterlab/toc 
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager 
 # RUN jupyter labextension install @elyra/pipeline-editor-extension 
 RUN jupyter labextension install jupyter-vuetify 
