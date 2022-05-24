@@ -81,9 +81,9 @@ RUN conda install -c conda-forge -c pytorch -c krinsman matplotlib && \
     conda update --all && \
     conda clean --all --yes
     
-RUN conda install -c conda-forge -c pytorch -c krinsman pytorch torchvision torchaudio torchtext && \
-    conda update --all && \
-    conda clean --all --yes
+#RUN conda install -c conda-forge -c pytorch -c krinsman pytorch torchvision torchaudio torchtext && \
+#    conda update --all && \
+#    conda clean --all --yes
     
 RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx xeus-cling && \
     conda update --all && \
