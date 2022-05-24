@@ -78,7 +78,7 @@ RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyterhub ju
 RUN conda install -c conda-forge -c pytorch -c krinsman matplotlib && \
     conda clean --all --yes
 # RUN conda install -c conda-forge -c pytorch -c krinsman tensorflow && \
-    conda clean --all --yes
+#    conda clean --all --yes
 RUN conda install -c conda-forge -c pytorch -c krinsman pytorch torchvision torchaudio torchtext && \
     conda clean --all --yes
 RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx xeus-cling && \
