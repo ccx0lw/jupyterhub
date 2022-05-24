@@ -77,14 +77,14 @@ RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyterhub ju
 RUN conda install -c conda-forge -c pytorch -c krinsman matplotlib
 # RUN conda install -c conda-forge -c pytorch -c krinsman tensorflow
 RUN conda install -c conda-forge -c pytorch -c krinsman pytorch torchvision torchaudio torchtext
-RUN conda install -c conda-forge -c pytorch -c krinsman xeus-cling
-RUN conda install -c conda-forge -c pytorch -c krinsman ipywidgets
-RUN conda install -c conda-forge -c pytorch -c krinsman bash_kernel
-RUN conda install -c conda-forge -c pytorch -c krinsman nodejs go
-RUN conda install -c conda-forge -c pytorch -c krinsman elyra jupyter_console jupyterlab-git prompt-toolkit
-RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx beakerx_kernel_groovy beakerx_kernel_kotlin beakerx_kernel_clojure beakerx_kernel_scala
-RUN conda install -c conda-forge -c pytorch -c krinsman lua ruby
-RUN conda install -c conda-forge -c pytorch -c krinsman voila ipyvuetify bqplot voila-vuetify
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx xeus-cling
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx ipywidgets
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx bash_kernel
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx nodejs go
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx elyra jupyter_console jupyterlab-git prompt-toolkit
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx -c beakerx beakerx_kernel_groovy beakerx_kernel_kotlin beakerx_kernel_clojure beakerx_kernel_scala
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx lua ruby
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx voila ipyvuetify bqplot voila-vuetify
 RUN conda clean --all --yes
                                                         
 # jupyter extension
