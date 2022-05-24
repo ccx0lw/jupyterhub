@@ -1,4 +1,4 @@
-FROM openjdk:14-alpine3.10
+FROM openjdk:19-jdk-alpine3.15
 MAINTAINER ccx0lw <fcjava@163.com>
 
 ENV DEBIAN_FRONTEND noninteractive
