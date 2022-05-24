@@ -122,7 +122,8 @@ RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     jupyter serverextension enable --py jupyterlab && \
     jupyter nbextension enable --py --sys-prefix ipyvuetify && \
     jupyter nbextension enable --py --sys-prefix bqplot && \
-    jupyter labextension install jupyterlab-drawio jupyterlab-topbar-extension jupyterlab-logout jupyterlab-theme-toggle @jupyterlab/toc @jupyter-widgets/jupyterlab-manager @elyra/pipeline-editor-extension jupyter-vuetify bqplot && \
+    # jupyterlab-logout
+    jupyter labextension install jupyterlab-drawio jupyterlab-topbar-extension jupyterlab-theme-toggle @jupyterlab/toc @jupyter-widgets/jupyterlab-manager @elyra/pipeline-editor-extension jupyter-vuetify bqplot && \
     jupyter labextension update --all
     
 RUN pip install markdown
