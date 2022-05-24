@@ -101,7 +101,7 @@ RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx go && \
     conda update --all && \
     conda clean --all --yes
     
-RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx elyra jupyter_console jupyterlab-git prompt-toolkit && \
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyter_console jupyterlab-git prompt-toolkit && \
     conda update --all && \
     conda clean --all --yes
     
@@ -137,7 +137,7 @@ RUN jupyter labextension install jupyterlab-topbar-extension
 RUN jupyter labextension install jupyterlab-theme-toggle 
 RUN jupyter labextension install @jupyterlab/toc 
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager 
-RUN jupyter labextension install @elyra/pipeline-editor-extension 
+# RUN jupyter labextension install @elyra/pipeline-editor-extension 
 RUN jupyter labextension install jupyter-vuetify 
 RUN jupyter labextension install bqplot 
 RUN jupyter labextension update --all
