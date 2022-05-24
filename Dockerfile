@@ -73,17 +73,16 @@ RUN conda install -y python=3 && \
     conda clean --all --yes
 
 # jupyterhub ... 
-RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyterhub jupyterlab notebook nbgitpuller \ 
-                                                        # matplotlib \
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyterhub jupyterlab notebook nbgitpuller \
+                                                        matplotlib \
                                                         # tensorflow \
                                                         # pytorch torchvision torchaudio torchtext \
                                                         xeus-cling \
                                                         ipywidgets \
                                                         bash_kernel \
-                                                        nodejs go \ 
+                                                        nodejs go \
                                                         elyra jupyter_console jupyterlab-git prompt-toolkit \
-                                                        beakerx_kernel_groovy beakerx_kernel_kotlin \
-                                                        # beakerx_kernel_clojure beakerx_kernel_scala \
+                                                        # beakerx_kernel_groovy beakerx_kernel_kotlin beakerx_kernel_clojure beakerx_kernel_scala \
                                                         lua ruby \
                                                         voila ipyvuetify bqplot voila-vuetify && \
                                                         conda clean --all --yes
