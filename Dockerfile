@@ -120,6 +120,7 @@ RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx voila ipyvuet
 # An error occurred. ValueError: Please install nodejs ＞=12.0.0 before continuing.
 # 参考：https://blog.csdn.net/m0_59249795/article/details/124660726
 #      https://computingforgeeks.com/how-to-install-nodejs-on-ubuntu-debian-linux-mint/
+# conda使用的是14.x的版本，但是matplotlib使用的是6.x的版本被覆盖了。导致最终labextension的时候conda用到的版本过低
 # nodejs
 RUN conda upgrade -c conda-forge nodejs && \
     node -v
