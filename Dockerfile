@@ -121,7 +121,9 @@ RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx voila ipyvuet
 # 参考：https://blog.csdn.net/m0_59249795/article/details/124660726
 #      https://computingforgeeks.com/how-to-install-nodejs-on-ubuntu-debian-linux-mint/
 # nodejs
+RUN conda install -c conda-forge nodejs
 RUN apk add --no-cache nodejs
+RUN node -v
                                                         
 # jupyter extension
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
