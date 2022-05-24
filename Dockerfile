@@ -75,7 +75,7 @@ RUN conda install -y python=3 && \
 # jupyterhub ... 
 RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyterhub jupyterlab notebook nbgitpuller
 RUN conda install -c conda-forge -c pytorch -c krinsman matplotlib
-RUN conda install -c conda-forge -c pytorch -c krinsman tensorflow
+# RUN conda install -c conda-forge -c pytorch -c krinsman tensorflow
 RUN conda install -c conda-forge -c pytorch -c krinsman pytorch torchvision torchaudio torchtext
 RUN conda install -c conda-forge -c pytorch -c krinsman xeus-cling
 RUN conda install -c conda-forge -c pytorch -c krinsman ipywidgets
