@@ -73,19 +73,19 @@ RUN conda install -y python=3 && \
     conda clean --all --yes
 
 # jupyterhub ... 
-RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyterhub jupyterlab notebook nbgitpuller \
-                                                        # matplotlib \
-                                                        # tensorflow \
-                                                        # pytorch torchvision torchaudio torchtext \
-                                                        xeus-cling \
-                                                        ipywidgets \
-                                                        bash_kernel \
-                                                        nodejs go \
-                                                        elyra jupyter_console jupyterlab-git prompt-toolkit \
-                                                        # beakerx_kernel_groovy beakerx_kernel_kotlin beakerx_kernel_clojure beakerx_kernel_scala \
-                                                        lua ruby \
-                                                        voila ipyvuetify bqplot voila-vuetify && \
-                                                        conda clean --all --yes
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyterhub jupyterlab notebook nbgitpuller
+RUN conda install -c conda-forge -c pytorch -c krinsman matplotlib
+RUN conda install -c conda-forge -c pytorch -c krinsman tensorflow
+RUN conda install -c conda-forge -c pytorch -c krinsman pytorch torchvision torchaudio torchtext
+RUN conda install -c conda-forge -c pytorch -c krinsman xeus-cling
+RUN conda install -c conda-forge -c pytorch -c krinsman ipywidgets
+RUN conda install -c conda-forge -c pytorch -c krinsman bash_kernel
+RUN conda install -c conda-forge -c pytorch -c krinsman nodejs go
+RUN conda install -c conda-forge -c pytorch -c krinsman elyra jupyter_console jupyterlab-git prompt-toolkit
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx beakerx_kernel_groovy beakerx_kernel_kotlin beakerx_kernel_clojure beakerx_kernel_scala
+RUN conda install -c conda-forge -c pytorch -c krinsman lua ruby
+RUN conda install -c conda-forge -c pytorch -c krinsman voila ipyvuetify bqplot voila-vuetify
+RUN conda clean --all --yes
                                                         
 # jupyter extension
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
