@@ -120,8 +120,7 @@ RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx voila ipyvuet
 # An error occurred. ValueError: Please install nodejs ＞=12.0.0 before continuing.
 # 参考：https://blog.csdn.net/m0_59249795/article/details/124660726
 #      https://computingforgeeks.com/how-to-install-nodejs-on-ubuntu-debian-linux-mint/
-# nodejs 18
-RUN curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+# nodejs
 RUN apk add --no-cache nodejs
                                                         
 # jupyter extension
