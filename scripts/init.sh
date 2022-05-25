@@ -15,7 +15,6 @@ if [ -f $file ]
                 useradd -ms /bin/bash $username
                 usermod -aG audio $username
                 usermod -aG video $username
-                usermod -aG sudo $username
                 mkdir -p /run/user/$(id -u $username)/dbus-1/
                 chmod -R 700 /run/user/$(id -u $username)/
                 chown -R "$username" /run/user/$(id -u $username)/
