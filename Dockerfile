@@ -165,13 +165,22 @@ RUN mkdir ijava-kernel && \
     python3 install.py --sys-prefix
     
 # go
-RUN cp /opt/conda/bin/x86_64-conda_cos6-linux-gnu-cc /opt/conda/bin/x86_64-conda-linux-gnu-cc && \ 
-    go get -u github.com/gopherdata/gophernotes && \ 
-    cd ~/go/src/github.com/gopherdata/gophernotes && \
-    GOPATH=~/go GO111MODULE=on go install . && \
-    cp ~/go/bin/gophernotes /usr/local/bin/ && \
-    mkdir -p /usr/local/share/jupyter/kernels/gophernotes && \
-    cp -r ./kernel/* /usr/local/share/jupyter/kernels/gophernotes 
+RUN conda install gcc_linux-64 && \ 
+    conda update conda && \
+    conda clean --all --yes
+    
+RUN conda install git && \
+    conda update conda && \
+    conda clean --all --yes
+    
+RUN cp /opt/conda/bin/x86_64-conda-linux-gnu-cc /opt/conda/bin/x86_64-conda-linux-gnu-cc
+
+RUN env GO111MODULE=on go get github.com/gopherdata/gophernotes
+RUN mkdir -p ~/.local/share/jupyter/kernels/gophernotes
+RUN cd ~/.local/share/jupyter/kernels/gophernotes
+RUN cp "$(go env GOPATH)"/pkg/mod/github.com/gopherdata/gophernotes@v0.7.4/kernel/*  "."
+RUN chmod +w ./kernel.json # in case copied kernel.json has no write permission
+RUN sed "s|gophernotes|$(go env GOPATH)/bin/gophernotes|" < kernel.json.in > kernel.json
 
 # lua
 RUN pip3 install ilua
