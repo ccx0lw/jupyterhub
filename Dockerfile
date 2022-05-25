@@ -186,9 +186,9 @@ RUN sed "s|gophernotes|$(go env GOPATH)/bin/gophernotes|" < kernel.json.in > ker
 RUN pip3 install ilua
 
 # ruby
-RUN gem install cztop rbczmq && \
-    gem install iruby && \
-    iruby register --force
+# RUN gem install cztop rbczmq && \
+#     gem install iruby && \
+#     iruby register --force
     
 RUN pip3 install --upgrade --force jupyter-console jupyterlab-git
 
