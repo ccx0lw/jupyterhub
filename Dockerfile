@@ -169,9 +169,9 @@ RUN conda install gcc_linux-64 && \
     conda update conda && \
     conda clean --all --yes
     
-RUN conda install git && \
-    conda update conda && \
-    conda clean --all --yes
+# RUN conda install git && \
+#     conda update conda && \
+#     conda clean --all --yes
     
 RUN cp /opt/conda/bin/x86_64-conda-linux-gnu-cc /opt/conda/bin/x86_64-conda-linux-gnu-cc
 
