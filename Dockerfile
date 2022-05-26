@@ -187,7 +187,7 @@ RUN pip3 install ilua
     
 RUN pip3 install --upgrade --force jupyter-console jupyterlab-git
 
-RUN rm -rf /tmp/* /var/cache/apk/* && rm -rf /root/.cache && rm -rf ijava-kernel.zip && rm -rf ijava-kernel &&  rm -rf /root/go
+RUN rm -rf /tmp/* /var/cache/apk/* && rm -rf /root/.cache && rm -rf ijava-kernel.zip && rm -rf ijava-kernel 
 
 WORKDIR /$USER
 
