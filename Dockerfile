@@ -7,7 +7,7 @@ ENV LANG=C.UTF-8
 
 # Here we install GNU libc (aka glibc) and set C.UTF-8 locale as default.
 RUN ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases/download" && \
-    ALPINE_GLIBC_PACKAGE_VERSION="2.32-r0" && \
+    ALPINE_GLIBC_PACKAGE_VERSION="2.35-r0" && \
     ALPINE_GLIBC_BASE_PACKAGE_FILENAME="glibc-$ALPINE_GLIBC_PACKAGE_VERSION.apk" && \
     ALPINE_GLIBC_BIN_PACKAGE_FILENAME="glibc-bin-$ALPINE_GLIBC_PACKAGE_VERSION.apk" && \
     ALPINE_GLIBC_I18N_PACKAGE_FILENAME="glibc-i18n-$ALPINE_GLIBC_PACKAGE_VERSION.apk" && \
@@ -49,7 +49,7 @@ RUN apk add --no-cache bash shadow sudo curl linux-pam ca-certificates libintl g
             ln -s /lib /lib64 && \
             addgroup sudo
             
-RUN apk add --virtual .build-deps build-base automake autoconf libtool linux-pam-dev openssl-dev wget unzip
+RUN apk add --virtual .build-deps build-base automake autoconf libtool linux-pam-dev openssl-dev wget unzip tini
 
 # 安装 conda
 ENV CONDA_DIR /opt/conda
@@ -203,6 +203,7 @@ ADD settings/jupyterhub_config.py /etc/jupyterhub/
 
 RUN chmod -R 755 /scripts
 
-EXPOSE 8000 8866
+EXPOSE 8000
 
+ENTRYPOINT ["/sbin/tini", "--"]
 CMD ["/scripts/init.sh"]
