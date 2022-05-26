@@ -174,7 +174,7 @@ RUN cp /opt/conda/bin/x86_64-conda-linux-gnu-cc /opt/conda/bin/x86_64-conda-linu
 RUN env GO111MODULE=on go get github.com/gopherdata/gophernotes
 RUN mkdir -p ~/.local/share/jupyter/kernels/gophernotes
 RUN cp "$(go env GOPATH)"/pkg/mod/github.com/gopherdata/gophernotes@v0.7.4/kernel/*  ~/.local/share/jupyter/kernels/gophernotes
-RUN chmod +w ./kernel.json 
+RUN chmod +w ~/.local/share/jupyter/kernels/gophernotes/kernel.json 
 RUN sed "s|gophernotes|$(go env GOPATH)/bin/gophernotes|" < ~/.local/share/jupyter/kernels/gophernotes/kernel.json.in > ~/.local/share/jupyter/kernels/gophernotes/kernel.json
 
 # lua
