@@ -169,18 +169,13 @@ RUN conda install gcc_linux-64 && \
     conda update conda && \
     conda clean --all --yes
     
-# RUN conda install git && \
-#     conda update conda && \
-#     conda clean --all --yes
-    
 RUN cp /opt/conda/bin/x86_64-conda-linux-gnu-cc /opt/conda/bin/x86_64-conda-linux-gnu-cc
 
 RUN env GO111MODULE=on go get github.com/gopherdata/gophernotes
 RUN mkdir -p ~/.local/share/jupyter/kernels/gophernotes
-RUN cd ~/.local/share/jupyter/kernels/gophernotes
-RUN cp "$(go env GOPATH)"/pkg/mod/github.com/gopherdata/gophernotes@v0.7.4/kernel/*  "."
-RUN chmod +w ./kernel.json # in case copied kernel.json has no write permission
-RUN sed "s|gophernotes|$(go env GOPATH)/bin/gophernotes|" < kernel.json.in > kernel.json
+RUN cp "$(go env GOPATH)"/pkg/mod/github.com/gopherdata/gophernotes@v0.7.4/kernel/*  ~/.local/share/jupyter/kernels/gophernotes
+RUN chmod +w ./kernel.json 
+RUN sed "s|gophernotes|$(go env GOPATH)/bin/gophernotes|" < ~/.local/share/jupyter/kernels/gophernotes/kernel.json.in > ~/.local/share/jupyter/kernels/gophernotes/kernel.json
 
 # lua
 RUN pip3 install ilua
@@ -192,7 +187,7 @@ RUN pip3 install ilua
     
 RUN pip3 install --upgrade --force jupyter-console jupyterlab-git
 
-RUN rm -rf /tmp/* /var/cache/apk/* && rm -rf /root/.cache && rm -rf ijava-kernel.zip
+RUN rm -rf /tmp/* /var/cache/apk/* && rm -rf /root/.cache && rm -rf ijava-kernel.zip && rm -rf ijava-kernel &&  rm -rf /root/go
 
 WORKDIR /$USER
 
