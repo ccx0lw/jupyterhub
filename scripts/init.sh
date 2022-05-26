@@ -54,7 +54,7 @@ cp -r $(jupyter --data-dir)/kernels/* /usr/local/share/jupyter/kernels/
 
 if [ -f /etc/jupyterhub/jupyterhub_config.py ]
   then
-    jupyterhub -f /etc/jupyterhub/jupyterhub_config.py --debug
+    jupyterhub -f /etc/jupyterhub/jupyterhub_config.py
   else
-    jupyterhub --debug
+    jupyterhub
 fi
