@@ -77,9 +77,9 @@ RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyterhub ju
     conda update --all && \
     conda clean --all --yes
     
-RUN conda install -c conda-forge -c pytorch -c krinsman matplotlib && \
-    conda update --all && \
-    conda clean --all --yes
+# RUN conda install -c conda-forge -c pytorch -c krinsman matplotlib && \
+#     conda update --all && \
+#     conda clean --all --yes
     
 #RUN conda install -c conda-forge -c pytorch -c krinsman pytorch torchvision torchaudio torchtext && \
 #    conda update --all && \
@@ -105,11 +105,12 @@ RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyter_conso
     conda update --all && \
     conda clean --all --yes
     
-RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx -c beakerx beakerx_kernel_groovy beakerx_kernel_kotlin beakerx_kernel_clojure beakerx_kernel_scala && \
-    conda update --all && \
-    conda clean --all --yes
+# RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx -c beakerx beakerx_kernel_groovy beakerx_kernel_kotlin beakerx_kernel_clojure beakerx_kernel_scala && \
+#     conda update --all && \
+#     conda clean --all --yes
     
-RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx lua ruby && \
+# ruby
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx lua  && \
     conda update --all && \
     conda clean --all --yes
     
