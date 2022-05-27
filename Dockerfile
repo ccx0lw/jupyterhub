@@ -187,6 +187,9 @@ RUN gem install cztop rbczmq && \
     
 RUN pip3 install --upgrade --force jupyter-console jupyterlab-git
 
+# 中文语言
+RUN pip3 install jupyterlab-language-pack-zh-CN
+
 RUN rm -rf /tmp/* /var/cache/apk/* && rm -rf /root/.cache && rm -rf ijava-kernel.zip && rm -rf ijava-kernel 
 
 WORKDIR /$USER
