@@ -152,10 +152,10 @@ RUN jupyter labextension update --all
 RUN BUILD='alpine-sdk linux-headers gcc g++ gfortran make cmake freetype-dev musl-dev libpng-dev libxml2-dev libxslt-dev tar make curl build-base wget gnupg perl perl-dev tar zeromq zeromq-dev libffi-dev jpeg-dev zlib-dev' && \
     apk update --no-cache && apk add --no-cache --virtual=build-deps ${BUILD}
     
-# perl
-RUN curl -sL http://cpanmin.us | perl - App::cpanminus
-RUN export ARCHFLAGS='-arch x86_64' && \
-    cpanm -n --mirror http://mirrors.163.com/cpan --mirror-only --build-args 'OTHERLDFLAGS=' ZMQ::LibZMQ3 Devel::IPerl PDL Moose MooseX::AbstractFactory MooseX::AbstractMethod MooseX::Storage Test::More
+# # perl
+# RUN curl -sL http://cpanmin.us | perl - App::cpanminus
+# RUN export ARCHFLAGS='-arch x86_64' && \
+#     cpanm -n --mirror http://mirrors.163.com/cpan --mirror-only --build-args 'OTHERLDFLAGS=' ZMQ::LibZMQ3 Devel::IPerl PDL Moose MooseX::AbstractFactory MooseX::AbstractMethod MooseX::Storage Test::More
 
 # java
 RUN curl -L https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip > ijava-kernel.zip
