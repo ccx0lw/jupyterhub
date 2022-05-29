@@ -127,7 +127,7 @@ RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyterhub ju
 #     node -v
                                                         
 # jupyter extension
-RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix 
+# RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix 
 RUN jupyter serverextension enable --py jupyterlab 
 # RUN jupyter nbextension enable --py --sys-prefix ipyvuetify 
 # RUN jupyter nbextension enable --py --sys-prefix bqplot 
