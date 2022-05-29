@@ -55,7 +55,7 @@ RUN apk add --virtual .build-deps build-base automake autoconf libtool linux-pam
 ENV CONDA_DIR /opt/conda
 ENV PATH $CONDA_DIR/bin:$PATH
 ENV CONTAINER_UID 1000
-ENV INSTALLER Miniconda3-latest-Linux-x86_64.sh
+ENV INSTALLER Miniconda3-py39_4.11.0-Linux-x86_64.sh
 RUN cd /tmp && \
     mkdir -p $CONDA_DIR && \
     wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
