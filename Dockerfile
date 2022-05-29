@@ -55,7 +55,7 @@ RUN apk add --virtual .build-deps build-base automake autoconf libtool linux-pam
 ENV CONDA_DIR /opt/conda
 ENV PATH $CONDA_DIR/bin:$PATH
 ENV CONTAINER_UID 1000
-ENV INSTALLER Miniconda3-py38_4.8.3-Linux-x86_64.sh
+ENV INSTALLER Miniconda3-latest-Linux-x86_64.sh
 RUN cd /tmp && \
     mkdir -p $CONDA_DIR && \
     wget https://repo.continuum.io/miniconda/$INSTALLER && \
@@ -77,46 +77,46 @@ RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyterhub ju
     conda update --all && \
     conda clean --all --yes
     
-# RUN conda install -c conda-forge -c pytorch -c krinsman matplotlib && \
-#     conda update --all && \
-#     conda clean --all --yes
+RUN conda install -c conda-forge -c pytorch -c krinsman matplotlib && \
+    conda update --all && \
+    conda clean --all --yes
     
-# #RUN conda install -c conda-forge -c pytorch -c krinsman pytorch torchvision torchaudio torchtext && \
-# #    conda update --all && \
-# #    conda clean --all --yes
+#RUN conda install -c conda-forge -c pytorch -c krinsman pytorch torchvision torchaudio torchtext && \
+#    conda update --all && \
+#    conda clean --all --yes
     
-# RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx xeus-cling && \
-#     conda update --all && \
-#     conda clean --all --yes
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx xeus-cling && \
+    conda update --all && \
+    conda clean --all --yes
     
-# RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx ipywidgets && \
-#     conda update --all && \
-#     conda clean --all --yes
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx ipywidgets && \
+    conda update --all && \
+    conda clean --all --yes
     
-# RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx bash_kernel && \
-#     conda update --all && \
-#     conda clean --all --yes
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx bash_kernel && \
+    conda update --all && \
+    conda clean --all --yes
     
-# RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx go && \
-#     conda update --all && \
-#     conda clean --all --yes
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx go && \
+    conda update --all && \
+    conda clean --all --yes
     
-# RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyter_console jupyterlab-git prompt-toolkit && \
-#     conda update --all && \
-#     conda clean --all --yes
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyter_console jupyterlab-git prompt-toolkit && \
+    conda update --all && \
+    conda clean --all --yes
     
-# RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx -c beakerx beakerx_kernel_groovy beakerx_kernel_kotlin beakerx_kernel_clojure beakerx_kernel_scala && \
-#     conda update --all && \
-#     conda clean --all --yes
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx -c beakerx beakerx_kernel_groovy beakerx_kernel_kotlin beakerx_kernel_clojure beakerx_kernel_scala && \
+    conda update --all && \
+    conda clean --all --yes
     
-# # ruby
-# RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx lua  && \
-#     conda update --all && \
-#     conda clean --all --yes
+# ruby
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx lua  && \
+    conda update --all && \
+    conda clean --all --yes
     
-# RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx voila ipyvuetify bqplot voila-vuetify && \
-#     conda update --all && \
-#     conda clean --all --yes
+RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx voila ipyvuetify bqplot voila-vuetify && \
+    conda update --all && \
+    conda clean --all --yes
 
 # An error occurred. ValueError: Please install nodejs ＞=12.0.0 before continuing.
 # 参考：https://blog.csdn.net/m0_59249795/article/details/124660726
@@ -127,35 +127,35 @@ RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx jupyterhub ju
 #     node -v
                                                         
 # jupyter extension
-# RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix 
+RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix 
 RUN jupyter serverextension enable --py jupyterlab 
-# RUN jupyter nbextension enable --py --sys-prefix ipyvuetify 
-# RUN jupyter nbextension enable --py --sys-prefix bqplot 
+RUN jupyter nbextension enable --py --sys-prefix ipyvuetify 
+RUN jupyter nbextension enable --py --sys-prefix bqplot 
 # labextension     -- jupyterlab-logout
-# RUN jupyter labextension install jupyterlab-plotly 
-# RUN jupyter labextension install jupyterlab-drawio 
-# RUN jupyter labextension install jupyterlab-topbar-extension 
-# RUN jupyter labextension install jupyterlab-theme-toggle 
-## RUN jupyter labextension install @jupyterlab/toc 
+RUN jupyter labextension install jupyterlab-plotly 
+RUN jupyter labextension install jupyterlab-drawio 
+RUN jupyter labextension install jupyterlab-topbar-extension 
+RUN jupyter labextension install jupyterlab-theme-toggle 
+# RUN jupyter labextension install @jupyterlab/toc 
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager 
-## RUN jupyter labextension install @elyra/pipeline-editor-extension 
-# RUN jupyter labextension install jupyter-vuetify 
-# RUN jupyter labextension install bqplot 
+# RUN jupyter labextension install @elyra/pipeline-editor-extension 
+RUN jupyter labextension install jupyter-vuetify 
+RUN jupyter labextension install bqplot 
 RUN jupyter labextension update --all
     
-# RUN pip install markdown
+RUN pip install markdown
     
-# # javascript
-# RUN npm --unsafe-perm i -g ijavascript && \
-#     ijsinstall --install=global
+# javascript
+RUN npm --unsafe-perm i -g ijavascript && \
+    ijsinstall --install=global
     
 RUN BUILD='alpine-sdk linux-headers gcc g++ gfortran make cmake freetype-dev musl-dev libpng-dev libxml2-dev libxslt-dev tar make curl build-base wget gnupg perl perl-dev tar zeromq zeromq-dev libffi-dev jpeg-dev zlib-dev' && \
     apk update --no-cache && apk add --no-cache --virtual=build-deps ${BUILD}
     
-# # perl
-# RUN curl -sL http://cpanmin.us | perl - App::cpanminus
-# RUN export ARCHFLAGS='-arch x86_64' && \
-#     cpanm -n --mirror http://mirrors.163.com/cpan --mirror-only --build-args 'OTHERLDFLAGS=' ZMQ::LibZMQ3 Devel::IPerl PDL Moose MooseX::AbstractFactory MooseX::AbstractMethod MooseX::Storage Test::More
+# perl
+RUN curl -sL http://cpanmin.us | perl - App::cpanminus
+RUN export ARCHFLAGS='-arch x86_64' && \
+    cpanm -n --mirror http://mirrors.163.com/cpan --mirror-only --build-args 'OTHERLDFLAGS=' ZMQ::LibZMQ3 Devel::IPerl PDL Moose MooseX::AbstractFactory MooseX::AbstractMethod MooseX::Storage Test::More
 
 # java
 RUN curl -L https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip > ijava-kernel.zip
@@ -165,28 +165,28 @@ RUN mkdir ijava-kernel && \
     cd ijava-kernel && \
     python3 install.py --sys-prefix
     
-# # go
-# RUN conda install gcc_linux-64 && \ 
-#     conda update conda && \
-#     conda clean --all --yes
+# go
+RUN conda install gcc_linux-64 && \ 
+    conda update conda && \
+    conda clean --all --yes
     
-# RUN cp /opt/conda/bin/x86_64-conda-linux-gnu-cc /opt/conda/bin/x86_64-conda-linux-gnu-cc
+RUN cp /opt/conda/bin/x86_64-conda-linux-gnu-cc /opt/conda/bin/x86_64-conda-linux-gnu-cc
 
-# RUN env GO111MODULE=on go get github.com/gopherdata/gophernotes
-# RUN mkdir -p ~/.local/share/jupyter/kernels/gophernotes
-# RUN cp "$(go env GOPATH)"/pkg/mod/github.com/gopherdata/gophernotes@v0.7.4/kernel/*  ~/.local/share/jupyter/kernels/gophernotes
-# RUN chmod +w ~/.local/share/jupyter/kernels/gophernotes/kernel.json 
-# RUN sed "s|gophernotes|$(go env GOPATH)/bin/gophernotes|" < ~/.local/share/jupyter/kernels/gophernotes/kernel.json.in > ~/.local/share/jupyter/kernels/gophernotes/kernel.json
+RUN env GO111MODULE=on go get github.com/gopherdata/gophernotes
+RUN mkdir -p ~/.local/share/jupyter/kernels/gophernotes
+RUN cp "$(go env GOPATH)"/pkg/mod/github.com/gopherdata/gophernotes@v0.7.4/kernel/*  ~/.local/share/jupyter/kernels/gophernotes
+RUN chmod +w ~/.local/share/jupyter/kernels/gophernotes/kernel.json 
+RUN sed "s|gophernotes|$(go env GOPATH)/bin/gophernotes|" < ~/.local/share/jupyter/kernels/gophernotes/kernel.json.in > ~/.local/share/jupyter/kernels/gophernotes/kernel.json
 
-# # lua
-# RUN pip3 install ilua
+# lua
+RUN pip3 install ilua
 
 # ruby
 #RUN gem install cztop rbczmq && \
 #    gem install iruby && \
 #    iruby register --force
     
-# RUN pip3 install --upgrade --force jupyter-console jupyterlab-git
+RUN pip3 install --upgrade --force jupyter-console jupyterlab-git
 
 # 中文语言
 RUN pip3 install jupyterlab-language-pack-zh-CN
