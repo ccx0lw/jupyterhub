@@ -1,0 +1,18 @@
+ARG BASE_IMAGE=jupyterhub/jupyterhub:2.3
+FROM $BASE_IMAGE AS builder
+
+USER root
+
+ENV DEBIAN_FRONTEND noninteractive
+
+
+
+
+
+
+
+
+FROM $BASE_IMAGE
+
+USER root
+
