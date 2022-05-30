@@ -123,8 +123,8 @@ RUN conda install -c conda-forge -c pytorch -c krinsman -c beakerx voila ipyvuet
 #      https://computingforgeeks.com/how-to-install-nodejs-on-ubuntu-debian-linux-mint/
 # conda使用的是14.x的版本，但是matplotlib使用的是6.x的版本被覆盖了。导致最终labextension的时候conda用到的版本过低
 # nodejs
-# RUN conda upgrade -c conda-forge nodejs && \
-#     node -v
+RUN conda upgrade -c conda-forge nodejs && \
+    node -v
                                                         
 # jupyter extension
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix 
