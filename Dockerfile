@@ -132,7 +132,7 @@ RUN jupyter serverextension enable --py jupyterlab
 RUN jupyter nbextension enable --py --sys-prefix ipyvuetify 
 RUN jupyter nbextension enable --py --sys-prefix bqplot 
 # labextension     -- jupyterlab-logout
-RUN jupyter labextension install jupyterlab-plotly 
+# RUN jupyter labextension install jupyterlab-plotly 
 RUN jupyter labextension install jupyterlab-drawio 
 RUN jupyter labextension install jupyterlab-topbar-extension 
 RUN jupyter labextension install jupyterlab-theme-toggle 
