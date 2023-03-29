@@ -17,7 +17,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag jupyterhub:$(date +%s)
     - name: Publish to Docker Repository
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: loveismile/jupyterhub:latest
         username: ${{ secrets.DOCKER_USERNAME }}
